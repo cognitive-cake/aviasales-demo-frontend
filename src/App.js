@@ -3,9 +3,21 @@ import logo from "./logo.svg";
 import "./App.css";
 
 class App extends Component {
-  constructor() {
-    super();
-    this.header = `TESTTESTTEST`;
+  constructor(props) {
+    super(props);
+    this.state = { date: new Date() };
+  }
+
+  componentDidMount() {
+    this.timerID = setInterval(() => this.tick(), 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timerID);
+  }
+
+  tick() {
+    this.setState({ date: new Date() });
   }
 
   render = () => (
@@ -17,7 +29,9 @@ class App extends Component {
       <p className="App-intro">
         To get started, edit <code>src/App.js</code> and save to reload.
       </p>
-      <p class="ASDASDASD">blablabla</p>
+      <p class="ASDASDASD">
+        Current time {this.state.date.toLocaleTimeString()}
+      </p>
     </div>
   );
 }
