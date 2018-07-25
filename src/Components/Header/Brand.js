@@ -1,11 +1,9 @@
 import React, { Component } from "react";
-import logo from "../logo.svg";
+import logo from "../../logo.svg";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
   position: absolute;
-  width: 139px;
-  height: 29px;
   left: 140px;
   top: 14px;
 
