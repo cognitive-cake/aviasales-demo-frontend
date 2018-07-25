@@ -13,7 +13,6 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.span`
-  font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   line-height: 25px;
