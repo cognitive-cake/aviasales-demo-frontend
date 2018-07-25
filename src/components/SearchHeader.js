@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
+import Brand from "./Brand";
+
 const Button = styled.button`
   border-radius: 3px;
   padding: 0.25em 1em;
@@ -11,6 +13,8 @@ const Button = styled.button`
 `;
 
 const Header = styled.header`
+  position: relative;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,6 +38,7 @@ class SearchHeader extends Component {
   render() {
     return (
       <Header>
+        <Brand />
         Привет, я хедер!
         <SearchForm>
           <Button>Я кнопка!</Button>
