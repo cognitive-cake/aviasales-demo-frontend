@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import SearchHeader from "./SearchHeader";
+import Header from "./Header";
 
 export default class extends Component {
   render() {
-    return <SearchHeader />;
+    return <Header />;
   }
 }
