@@ -1,14 +1,15 @@
-import React, { Component } from "react";
+// import React, { Component } from "react";
 import styled from "styled-components";
 
-const FieldWrapper = styled.div`
-  display: inline-block;
-`;
-
-const InputField = styled.input`
+export default styled.input.attrs({
+  placeholder: props => props.placeholder,
+  defaultValue: props => props.defaultValue
+})`
+  box-sizing: border-box;
   border-width: 0;
   margin-bottom: 2px;
   padding: 18px 16px;
+  width: 100%;
 
   background: #ffffff;
   font-style: normal;
@@ -22,18 +23,3 @@ const InputField = styled.input`
     cursor: pointer;
   }
 `;
-
-class SearchField extends Component {
-  render() {
-    return (
-      <FieldWrapper>
-        <InputField
-          placeholder={this.props.placeholder}
-          defaultValue={this.props.defaultValue}
-        />
-      </FieldWrapper>
-    );
-  }
-}
-
-export default SearchField;

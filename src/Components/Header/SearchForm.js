@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 
 import SearchField from "./SearchField";
+import Button from "./Button";
 import planeImg from "../../plane.svg";
 
 const MainHeader = styled.h1`
@@ -28,59 +29,46 @@ const SecondHeader = styled.h2`
   color: #ffffff;
 `;
 
-const FieldsWrapper = styled.div``;
+const SearchWrapper = styled.div`
+  margin-bottom: 48px;
+`;
 
+const FieldWrapper = styled.div`
+  margin-left: -8px;
+  margin-right: -8px;
+`;
+
+const FromFieldWrapper = styled.div`
+  margin-right: 2px;
+`;
 const From = styled(SearchField)`
-  position: relative;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
-  margin-right: 2px;
+
   padding-right: 83px;
 `;
 
-const To = styled(SearchField)`
+const ToFieldWrapper = styled.div`
   margin-right: 2px;
 `;
+const To = styled(SearchField)``;
 
-const DepartureThither = styled(SearchField)`
+const DepartureThitherFieldWrapper = styled.div`
   margin-right: 2px;
 `;
+const DepartureThither = styled(SearchField)``;
 
-const DepartureBack = styled(SearchField)`
+const DepartureBackFieldWrapper = styled.div`
   margin-right: 2px;
 `;
+const DepartureBack = styled(SearchField)``;
 
+const NumberOfSeatsFieldWrapper = styled.div`
+  margin-right: 2px;
+`;
 const NumberOfSeats = styled(SearchField)`
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
-`;
-
-const Button = styled.button`
-  background: #ff9241;
-  border-radius: 4px;
-  border-width: 0;
-
-  padding: 15px 25px 15px 45px;
-
-  font-style: normal;
-  font-weight: 900;
-  line-height: normal;
-  font-size: 28px;
-
-  color: #ffffff;
-
-  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25);
-
-  &:hover {
-    background: #ff9241de;
-    cursor: pointer;
-  }
-
-  &:active {
-    padding-top: 16px;
-    padding-bottom: 14px;
-    box-shadow: inset 0px 1px 1px 1px rgba(0, 0, 0, 0.25);
-  }
 `;
 
 const PlaneSvg = styled.img`
@@ -91,16 +79,48 @@ const PlaneSvg = styled.img`
 class SearchForm extends Component {
   render() {
     return (
-      <form action="#" method="get" id="searchForm">
+      <form action="#" method="get" id="searchForm" className="container">
         <MainHeader>Поиск дешевых авиабилетов</MainHeader>
         <SecondHeader>Лучший способ купить авиабилеты дешево</SecondHeader>
-        <FieldsWrapper>
-          <From defaultValue="Москва" />
-          <To placeholder="Город прибытия" />
-          <DepartureThither placeholder="Туда" />
-          <DepartureBack placeholder="Обратно" />
-          <NumberOfSeats defaultValue="1 пассажир, эконом" />
-        </FieldsWrapper>
+        <SearchWrapper>
+          <div className="row">
+            <div className="col-xs-12 col-sm-6 col-xl">
+              <FieldWrapper>
+                <FromFieldWrapper>
+                  <From defaultValue="Москва" />
+                </FromFieldWrapper>
+              </FieldWrapper>
+            </div>
+            <div className="col-xs-12 col-sm-6 col-xl">
+              <FieldWrapper>
+                <ToFieldWrapper>
+                  <To placeholder="Город прибытия" />
+                </ToFieldWrapper>
+              </FieldWrapper>
+            </div>
+            <div className="col-xs-6 col-sm-3 col-xl">
+              <FieldWrapper>
+                <DepartureThitherFieldWrapper>
+                  <DepartureThither placeholder="Туда" />
+                </DepartureThitherFieldWrapper>
+              </FieldWrapper>
+            </div>
+            <div className="col-xs-6 col-sm-3 col-xl">
+              <FieldWrapper>
+                <DepartureBackFieldWrapper>
+                  <DepartureBack placeholder="Обратно" />
+                </DepartureBackFieldWrapper>
+              </FieldWrapper>
+            </div>
+            <div className="col-xs-12 col-sm-6 col-xl">
+              <FieldWrapper>
+                <NumberOfSeatsFieldWrapper>
+                  <NumberOfSeats defaultValue="1 пассажир, эконом" />
+                </NumberOfSeatsFieldWrapper>
+              </FieldWrapper>
+            </div>
+          </div>
+        </SearchWrapper>
         <Button>
           Найти билеты<PlaneSvg src={planeImg} alt="plane" />
         </Button>
