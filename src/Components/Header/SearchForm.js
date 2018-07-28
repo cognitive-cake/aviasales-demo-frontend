@@ -33,7 +33,7 @@ const SearchWrapper = styled.div`
   margin-bottom: 48px;
 `;
 
-const FieldWrapper = styled.div`
+const NoGuttersDiv = styled.div`
   margin-left: -8px;
   margin-right: -8px;
 `;
@@ -85,39 +85,39 @@ class SearchForm extends Component {
         <SearchWrapper>
           <div className="row">
             <div className="col-xs-12 col-sm-6 col-xl">
-              <FieldWrapper>
+              <NoGuttersDiv>
                 <FromFieldWrapper>
                   <From defaultValue="Москва" />
                 </FromFieldWrapper>
-              </FieldWrapper>
+              </NoGuttersDiv>
             </div>
             <div className="col-xs-12 col-sm-6 col-xl">
-              <FieldWrapper>
+              <NoGuttersDiv>
                 <ToFieldWrapper>
                   <To placeholder="Город прибытия" />
                 </ToFieldWrapper>
-              </FieldWrapper>
+              </NoGuttersDiv>
             </div>
             <div className="col-xs-6 col-sm-3 col-xl">
-              <FieldWrapper>
+              <NoGuttersDiv>
                 <DepartureThitherFieldWrapper>
                   <DepartureThither placeholder="Туда" />
                 </DepartureThitherFieldWrapper>
-              </FieldWrapper>
+              </NoGuttersDiv>
             </div>
             <div className="col-xs-6 col-sm-3 col-xl">
-              <FieldWrapper>
+              <NoGuttersDiv>
                 <DepartureBackFieldWrapper>
                   <DepartureBack placeholder="Обратно" />
                 </DepartureBackFieldWrapper>
-              </FieldWrapper>
+              </NoGuttersDiv>
             </div>
             <div className="col-xs-12 col-sm-6 col-xl">
-              <FieldWrapper>
+              <NoGuttersDiv>
                 <NumberOfSeatsFieldWrapper>
                   <NumberOfSeats defaultValue="1 пассажир, эконом" />
                 </NumberOfSeatsFieldWrapper>
-              </FieldWrapper>
+              </NoGuttersDiv>
             </div>
           </div>
         </SearchWrapper>
