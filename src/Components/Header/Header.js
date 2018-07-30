@@ -28,8 +28,10 @@ class Header extends Component {
   render() {
     return (
       <SearchHeader>
-        <Brand />
-        <SearchForm />
+        <div className="container">
+          <Brand />
+          <SearchForm />
+        </div>
       </SearchHeader>
     );
   }
