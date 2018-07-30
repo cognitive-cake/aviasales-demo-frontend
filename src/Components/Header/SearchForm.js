@@ -8,14 +8,21 @@ import planeImg from "../../plane.svg";
 
 const MainHeader = styled.h1`
   margin: 0;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
+
   font-style: normal;
   font-weight: bold;
-  line-height: 48px;
-  font-size: 40px;
+  line-height: normal;
+  font-size: 20px;
   text-align: center;
 
   color: #ffffff;
+
+  @media (min-width: ${MediaSizes.xl}) {
+    font-weight: bold;
+    line-height: 48px;
+    font-size: 40px;
+  }
 `;
 
 const SecondHeader = styled.h2`
@@ -118,7 +125,10 @@ class SearchForm extends Component {
     return (
       <form action="#" method="get" id="searchForm" className="container">
         <MainHeader>Поиск дешевых авиабилетов</MainHeader>
-        <SecondHeader>Лучший способ купить авиабилеты дешево</SecondHeader>
+        <div className="hidden-xs">
+          <SecondHeader>Лучший способ купить авиабилеты дешево</SecondHeader>
+        </div>
+
         <SearchWrapper>
           <div className="row">
             <div className="col-xs-12 col-sm-6 col-xl">
