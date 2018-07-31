@@ -30,7 +30,9 @@ class Brand extends Component {
     return (
       <Wrapper>
         <Logotype src={logo} alt="Logotype" />
-        <Title>aviasales</Title>
+        <span className="hidden-xs">
+          <Title>aviasales</Title>
+        </span>
       </Wrapper>
     );
   }

@@ -18,6 +18,11 @@ const MainHeader = styled.h1`
 
   color: #ffffff;
 
+  @media (min-width: ${MediaSizes.xs}) {
+    line-height: 48px;
+    font-size: 32px;
+  }
+
   @media (min-width: ${MediaSizes.xl}) {
     font-weight: bold;
     line-height: 48px;
@@ -28,17 +33,30 @@ const MainHeader = styled.h1`
 const SecondHeader = styled.h2`
   margin: 0;
   margin-bottom: 40px;
+
   font-style: normal;
   font-weight: bold;
   line-height: normal;
-  font-size: 24px;
+  font-size: 20px;
   text-align: center;
 
   color: #ffffff;
+
+  @media (min-width: ${MediaSizes.xl}) {
+    font-size: 24px;
+  }
 `;
 
 const SearchWrapper = styled.div`
-  margin-bottom: 48px;
+  margin-bottom: 16px;
+
+  @media (min-width: ${MediaSizes.xs}) {
+    margin-bottom: 32px;
+  }
+
+  @media (min-width: ${MediaSizes.xl}) {
+    margin-bottom: 48px;
+  }
 `;
 
 const NoGuttersDiv = styled.div`

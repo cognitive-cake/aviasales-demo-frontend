@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
+import MediaSizes from "../MediaSizes";
 import Brand from "./Brand";
 import SearchForm from "./SearchForm";
 
@@ -9,7 +10,7 @@ const SearchHeader = styled.header`
 
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: top;
   width: 100%;
   min-height: 100vh;
   text-align: center;
@@ -22,6 +23,18 @@ const SearchHeader = styled.header`
     #02abdb 11.7%,
     #196ebd 100%
   );
+
+  @media (min-width: ${MediaSizes.xs}) {
+    align-items: center;
+  }
+`;
+
+const FormWrapper = styled.div`
+  margin-top: 88px;
+
+  @media (min-width: ${MediaSizes.xs}) {
+    margin-top: 0;
+  }
 `;
 
 class Header extends Component {
@@ -30,7 +43,9 @@ class Header extends Component {
       <SearchHeader>
         <div className="container">
           <Brand />
-          <SearchForm />
+          <FormWrapper>
+            <SearchForm />
+          </FormWrapper>
         </div>
       </SearchHeader>
     );
