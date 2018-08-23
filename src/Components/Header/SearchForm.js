@@ -1,36 +1,62 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
+import MediaSizes from "../MediaSizes";
 import SearchField from "./SearchField";
 import Button from "./Button";
 import planeImg from "../../plane.svg";
 
 const MainHeader = styled.h1`
   margin: 0;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
+
   font-style: normal;
   font-weight: bold;
-  line-height: 48px;
-  font-size: 40px;
+  line-height: normal;
+  font-size: 20px;
   text-align: center;
 
   color: #ffffff;
+
+  @media (min-width: ${MediaSizes.xs}) {
+    line-height: 48px;
+    font-size: 32px;
+  }
+
+  @media (min-width: ${MediaSizes.xl}) {
+    font-weight: bold;
+    line-height: 48px;
+    font-size: 40px;
+  }
 `;
 
 const SecondHeader = styled.h2`
   margin: 0;
   margin-bottom: 40px;
+
   font-style: normal;
   font-weight: bold;
   line-height: normal;
-  font-size: 24px;
+  font-size: 20px;
   text-align: center;
 
   color: #ffffff;
+
+  @media (min-width: ${MediaSizes.xl}) {
+    font-size: 24px;
+  }
 `;
 
 const SearchWrapper = styled.div`
-  margin-bottom: 48px;
+  margin-bottom: 16px;
+
+  @media (min-width: ${MediaSizes.xs}) {
+    margin-bottom: 32px;
+  }
+
+  @media (min-width: ${MediaSizes.xl}) {
+    margin-bottom: 48px;
+  }
 `;
 
 const NoGuttersDiv = styled.div`
@@ -39,36 +65,72 @@ const NoGuttersDiv = styled.div`
 `;
 
 const FromFieldWrapper = styled.div`
-  margin-right: 2px;
+  @media (min-width: ${MediaSizes.xs}) {
+    margin-right: 2px;
+  }
 `;
 const From = styled(SearchField)`
   border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
+  border-top-right-radius: 4px;
 
   padding-right: 83px;
+
+  @media (min-width: ${MediaSizes.xs}) {
+    border-top-right-radius: 0;
+  }
+
+  @media (min-width: ${MediaSizes.xl}) {
+    border-bottom-left-radius: 4px;
+  }
 `;
 
 const ToFieldWrapper = styled.div`
-  margin-right: 2px;
+  @media (min-width: ${MediaSizes.xl}) {
+    margin-right: 2px;
+  }
 `;
-const To = styled(SearchField)``;
+const To = styled(SearchField)`
+  @media (min-width: ${MediaSizes.xs}) {
+    border-top-right-radius: 4px;
+  }
+
+  @media (min-width: ${MediaSizes.xl}) {
+    border-top-right-radius: 0;
+  }
+`;
 
 const DepartureThitherFieldWrapper = styled.div`
   margin-right: 2px;
 `;
-const DepartureThither = styled(SearchField)``;
+const DepartureThither = styled(SearchField)`
+  @media (min-width: ${MediaSizes.xs}) {
+    border-bottom-left-radius: 4px;
+  }
+
+  @media (min-width: ${MediaSizes.xl}) {
+    border-bottom-left-radius 0;
+  }
+`;
 
 const DepartureBackFieldWrapper = styled.div`
-  margin-right: 2px;
+  @media (min-width: ${MediaSizes.xs}) {
+    margin-right: 2px;
+  }
 `;
 const DepartureBack = styled(SearchField)``;
 
-const NumberOfSeatsFieldWrapper = styled.div`
-  margin-right: 2px;
-`;
+const NumberOfSeatsFieldWrapper = styled.div``;
 const NumberOfSeats = styled(SearchField)`
-  border-top-right-radius: 4px;
+  border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
+
+  @media (min-width: ${MediaSizes.xs}) {
+    border-bottom-left-radius: 0;
+  }
+
+  @media (min-width: ${MediaSizes.xl}) {
+    border-top-right-radius: 4px;
+  }
 `;
 
 const PlaneSvg = styled.img`
@@ -81,7 +143,10 @@ class SearchForm extends Component {
     return (
       <form action="#" method="get" id="searchForm" className="container">
         <MainHeader>Поиск дешевых авиабилетов</MainHeader>
-        <SecondHeader>Лучший способ купить авиабилеты дешево</SecondHeader>
+        <div className="hidden-xs">
+          <SecondHeader>Лучший способ купить авиабилеты дешево</SecondHeader>
+        </div>
+
         <SearchWrapper>
           <div className="row">
             <div className="col-xs-12 col-sm-6 col-xl">
